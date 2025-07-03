@@ -8,5 +8,5 @@ export default defineConfig({
     tailwindcss(),
   ],
   root: "client",
-  base:'/'
+  base:'/client'
 })
