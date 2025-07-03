@@ -6,7 +6,7 @@ function About() {
 					<h2 className="text-[#331c52] font-bold text-3xl p-5">About Me</h2>
 				</div>
 
-				<div className="-mt-5 flex sm:items-center w-full">
+				<div className="-mt-5 flex items-center w-full">
 					<p className="text-[#331c52] p-5 w-full sm:w-1/2 sm:z-10">
 						Après avoir passé plus de 3 ans dans le consulting et près de 5 ans
 						dans le domaine des ressources humaines, j'ai décidé de me
@@ -16,11 +16,11 @@ function About() {
 						utilisateurs.
 					</p>
 
-					<div className="hidden sm:block sm:w-1/2">
+					<div className="hidden lg:block sm:w-1/2 ">
 						<img
 							src="/code.svg"
 							alt="baliseHtml"
-							className="w-full h-50 opacity-20"
+							className="w-full h-50 opacity-20 lg:ml-30"
 						/>
 					</div>
 				</div>
@@ -36,11 +36,11 @@ function About() {
 			</div>
 
 			<section className="flex w-fullc gap-5 items-center px-3 py-4">
-				<div className="w-1/2 flex md:justify-between md:items-center md:ml-5">
+				<div className="w-1/2 flex md:justify-between md:items-center md:ml-5 lg:ml-20">
 					<img
 						src="/mergelogo.svg"
 						alt="Merge Logo"
-						className="h-35 opacity-20 max-w-full"
+						className="h-35 opacity-20 max-w-full lg:h-45"
 					/>
 				</div>
 
@@ -53,7 +53,7 @@ function About() {
 					<img
 						src="/tailwind.svg"
 						alt="HTML Logo"
-						className="bg-[#331c52] h-12 p-2 rounded-sm"
+						className="bg-[#331c52] h-12 w-12 p-1 rounded-sm"
 					/>
 					<img
 						src="/jwticon.svg"

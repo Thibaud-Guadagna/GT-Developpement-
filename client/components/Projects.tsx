@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 
+// Ajoutez cette déclaration pour étendre ImportMeta et éviter l'erreur TypeScript
+
+
 type Repo = {
 	id: string;
 	name: string;
@@ -39,7 +42,7 @@ function Projets() {
 	}, []);
 
 	return (
-		<section className="bg-[#E1EBED] m-5 -mt-5">
+		<section id="projects" className="bg-[#E1EBED] m-5 -mt-5">
 			<div>
 				<h2 className="text-[#331c52] font-bold text-3xl m-5 p-5">
 					Mes Projets :
@@ -48,75 +51,52 @@ function Projets() {
 
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-5">
 				{repos.map((repo) => (
-					<div
-						key={repo.id}
-						className="bg-white rounded-2xl shadow p-4 hover:shadow-lg transition"
-					>
-						<h3 className="text-[#331c52] font-semibold text-xl mb-2">
-							{repo.name}
-						</h3>
-						<p className="text-sm text-gray-600 mb-2">{repo.description}</p>
-						<div className="flex justify-between items-center text-sm mb-2">
-							<a
-								href={repo.html_url}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-blue-600 hover:underline"
-							>
-								Voir sur GitHub
-							</a>
-						</div>
+  <div
+    key={repo.id}
+    className="bg-white rounded-2xl shadow p-4 hover:shadow-lg transition lg:flex lg:flex-col"
+  >
+    <h3 className="text-[#331c52] font-semibold text-xl mb-2">{repo.name}</h3>
 
-						<div>
-							{repo.name === "TakuTaku" && (
-								<video
-									controls
-									className="rounded-xl mt-2"
-									width="100%"
-									autoPlay
-									muted
-									loop
-									playsInline
-								>
-									<source src="/TakuTaku.mp4" type="video/mp4" />
-									Votre navigateur ne supporte pas la lecture vidéo.
-								</video>
-							)}
-						</div>
-						<div>
-							{repo.name === "strasgite" && (
-								<video
-									controls
-									className="rounded-xl mt-2"
-									width="100%"
-									autoPlay
-									muted
-									loop
-									playsInline
-								>
-									<source src="/Strasbourg.mp4" type="video/mp4" />
-									Votre navigateur ne supporte pas la lecture vidéo.
-								</video>
-							)}
-						</div>
-						<div>
-							{repo.name === "Projet-Wild-Eats" && (
-								<video
-									controls
-									className="rounded-xl mt-2"
-									width="100%"
-									autoPlay
-									muted
-									loop
-									playsInline
-								>
-									<source src="/wildeat.mp4" type="video/mp4" />
-									Votre navigateur ne supporte pas la lecture vidéo.
-								</video>
-							)}
-						</div>
-					</div>
-				))}
+    <p className="text-sm text-gray-600 mb-2 flex-grow">{repo.description}</p>
+
+    <div className="mb-3">
+      <a
+        href={repo.html_url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-600 hover:underline"
+      >
+        Voir sur GitHub
+      </a>
+    </div>
+
+    <div>
+      {(repo.name === "TakuTaku" || repo.name === "strasgite" || repo.name === "Projet-Wild-Eats") && (
+        <video
+          controls
+          className="rounded-xl h-48 w-full object-contain"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source
+            src={
+              repo.name === "TakuTaku"
+                ? "/TakuTaku.mp4"
+                : repo.name === "strasgite"
+                ? "/Strasbourg.mp4"
+                : "/wildeat.mp4"
+            }
+            type="video/mp4"
+          />
+          Votre navigateur ne supporte pas la lecture vidéo.
+        </video>
+      )}
+    </div>
+  </div>
+))}
+
 			</div>
 		</section>
 	);

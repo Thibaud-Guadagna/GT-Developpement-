@@ -1,24 +1,21 @@
+import About from '../components/About';
+import Contact from '../components/Contact';
+import Header from '../components/Header';
+import Projets from '../components/Projects';
+import Footer from '../components/Footer'
 
-import About from '../components/About'
-import Header from '../components/Header'
-import Projets from '../components/Projects'
-
-import './App.css'
-
+import './main';
 
 function App() {
- 
   return (
-    
-      <div>
-        <Header />
-        <About />
-        <Projets />
-      
+    <div className='lg:mx-20'>
+      <Header />
+      <About />
+      <Projets />
+      <Contact />
+      <Footer />
     </div>
-
-    
-  )
+  );
 }
 
-export default App
+export default App;
